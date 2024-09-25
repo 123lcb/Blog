@@ -34,7 +34,7 @@ int http_filter(struct xdp_md *xdp){
 	}
 
     // TODO: 过滤非 IPv4 数据包
-    if (eth->h_proto != htons(ETH_P_IP)) {
+    if (eth->h_proto != bpf_htons(ETH_P_IP)) {
         return 0;
     }
 
